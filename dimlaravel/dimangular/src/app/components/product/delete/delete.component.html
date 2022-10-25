@@ -1,0 +1,26 @@
+<div class="container" style="margin-top:150px;">
+  <div class="submit-form">
+    <div *ngIf="!deleted">
+      <div class="form-group">
+        <label for="title">ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="product.id"
+          name="title"
+        />
+      </div>
+
+
+
+      <button (click)="deleteProduct()" class="btn btn-success">Delete</button>
+    </div>
+
+    <div *ngIf="deleted">
+      <h4>You deleted successfully!</h4>
+      <button class="btn btn-success" routerLink="/products" (click)="falseDeleted()">Products</button>
+    </div>
+  </div>
+</div>

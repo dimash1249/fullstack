@@ -1,0 +1,58 @@
+<div class="list row container" style="margin-top:150px;">
+  <div class="col-md-8">
+    <!--<div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="name"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+
+
+        >
+          Search
+        </button>
+      </div>
+    </div>-->
+  </div>
+  <div class="row">
+    <h4>Products List</h4>
+    <table class="table table-bordered">
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td *ngIf="isAdmin">Detail</td>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td *ngIf="isAdmin">{{product.detail}}</td>
+      </tr>
+    </table>
+    <!--<ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let product of products; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveProduct(product, i)"
+      >
+        {{ product.name }}
+      </li>
+    </ul>-->
+
+    <!--<button class="m-3 btn btn-sm btn-danger">
+      Remove All
+    </button>-->
+  </div>
+  <div class="row">
+    <app-product-details
+      [viewMode]="true"
+      [currentProduct]="currentProduct"
+      [currentIndex]="currentIndex"
+    ></app-product-details>
+  </div>
+</div>
